@@ -223,10 +223,48 @@ st.markdown("""
 
 add_selectbox = st.sidebar.selectbox(
     "Select Page: ",
-    ("Calculator", "Tips")
+    ("Homepage", "Kalkulator", "Tentang Entropy dan Tips")
 )
 
-if add_selectbox == "Calculator":
+if add_selectbox == "Homepage":
+    st.markdown("""
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 class="main-title">Kalkulator Entropy Password</h1>
+        <p class="subtitle">Mengukur kekuatan password Anda dengan mudah dan cepat</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style="padding-left: 0.5rem; padding-right: 5rem;">
+        <p style="text-align: justify; font-size: 1.05rem;">
+            Selamat datang di aplikasi <b>Kalkulator Entropy Password</b>! 
+            Aplikasi ini membantu Anda memahami dan mengukur kekuatan password menggunakan konsep <strong>entropy</strong>.
+            Semakin tinggi nilai entropi, semakin sulit password untuk ditebak.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 2rem 1rem; border-radius: 15px; color: white; box-shadow: 0 8px 25px rgba(0,0,0,0.07); text-align: center;">
+            <h2 style="margin-bottom: 1rem;">🔑 Kalkulator Password</h2>
+            <p style="font-size: 1.1rem;">Cek kekuatan password Anda secara instan, lengkap dengan analisis entropy, visualisasi, dan tips perbaikan.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 2rem 1rem; border-radius: 15px; color: #333; box-shadow: 0 8px 25px rgba(0,0,0,0.07); text-align: center;">
+            <h2 style="margin-bottom: 1rem;">💡 Tips & Teori</h2>
+            <p style="font-size: 1.1rem;">Pelajari apa itu entropy, mengapa penting, dan dapatkan tips membuat password yang kuat dan aman.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.info("Gunakan menu di sidebar untuk mulai menggunakan kalkulator atau membaca tips keamanan password.")
+elif add_selectbox == "Kalkulator":
     st.markdown("""
     <div style="display: flex; align-items: center; gap: 0.5rem;">
         <span style="font-size: 2.5rem;">🔐</span>
@@ -388,7 +426,7 @@ if add_selectbox == "Calculator":
     except FileNotFoundError:
         st.info("💡 Gambar diagram akan ditampilkan jika file `diagram pie.png` dan `diagram histogram.png` tersedia di folder yang sama.")
 
-elif add_selectbox == "Tips":
+elif add_selectbox == "Tentang Entropy dan Tips":
     # --- BAGIAN PENJELASAN TEORI ---
     st.markdown("""
         <div style="text-align: center; margin-bottom: 2.5rem;">
@@ -409,7 +447,7 @@ elif add_selectbox == "Tips":
 
     with col1:
         st.markdown("""
-    <div class="theory-card">
+    <div class="tips-card">
         <h2>🧮 Apa itu Entropy?</h2>
         <p style="margin-bottom: 1rem;">
             Dalam konteks keamanan password, <strong>entropy</strong> adalah ukuran ketidakpastian atau keacakan sebuah password.
@@ -435,7 +473,7 @@ elif add_selectbox == "Tips":
 
     with col2:
         st.markdown("""
-        <div class="theory-card">
+        <div class="tips-card">
             <h2>🛡️ Mengapa Ini Penting?</h2>
             <p>Setiap hari, banyak upaya pembobolan data. Password yang mudah ditebak seperti "123456" atau "password" menjadi target utama.</p>
             <p>
