@@ -260,18 +260,19 @@ if add_selectbox == "Calculator":
             help="Password yang Anda masukkan tidak disimpan. Kalkulasi dilakukan secara real-time di browser Anda.",
             key="password_input"
         )
+        cek_button = st.button("🔍 Cek Password")
 
     with col_toggle:
-        st.write("")  # Spacer
+        st.write("") # Spacer
         show_password = st.checkbox("👁️ Tampilkan")
 
     if show_password and password_input:
         st.text_input("Password Anda:", value=password_input, disabled=True)
 
-    if password_input:
+    if cek_button and password_input:
         # Animasi loading
         with st.spinner('🔍 Menganalisis keamanan password...'):
-            time.sleep(0.3)  # Simulasi loading
+            time.sleep(1.0) # Simulasi loading
         
         # Hitung entropy dan klasifikasikan
         entropy_score = calculate_entropy(password_input)
