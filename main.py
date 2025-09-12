@@ -421,8 +421,11 @@ elif add_selectbox == "Kalkulator":
         img_col1, img_col2 = st.columns(2)
         with img_col1:
             st.image("diagram pie.png")
+            st.write("**Diagram Pie: Distribusi Kategori Kekuatan Password**\n\nMenunjukkan persentase password yang masuk dalam kategori Sangat Lemah, Lemah, Sedang, Kuat, dan Sangat Kuat berdasarkan skor entropy mereka.")
         with img_col2:
-            st.image("diagram histogram.png",)
+            st.image("diagram histogram.png")
+            st.write("**Diagram Histogram: Distribusi Skor Entropy Password**\n\nMenampilkan sebaran skor entropy dari seluruh password dalam dataset, memperlihatkan tren umum dalam kekuatan password yang digunakan.")
+
     except FileNotFoundError:
         st.info("💡 Gambar diagram akan ditampilkan jika file `diagram pie.png` dan `diagram histogram.png` tersedia di folder yang sama.")
 
