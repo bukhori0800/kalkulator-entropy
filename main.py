@@ -415,16 +415,16 @@ elif add_selectbox == "Kalkulator":
 
     # --- BAGIAN ANALISIS DATASET terhubung ke kaggler rockyou ---
     st.header("📊 Studi Kasus: Analisis Dataset `rockyou.txt`")
-    st.write("Sebagai bagian dari penelitian, dilakukan analisis terhadap **14 juta password** dari dataset [`rockyou.txt`](https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt)")
+    st.write("Sebagai bagian dari penelitian, dilakukan analisis terhadap **13 juta password** dari dataset [`rockyou.txt`](https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt)")
 
     try:
         img_col1, img_col2 = st.columns(2)
         with img_col1:
             st.image("diagram pie.png")
-            st.write("**Diagram Pie: Distribusi Kategori Kekuatan Password**\n\nMenunjukkan persentase password yang masuk dalam kategori Sangat Lemah, Lemah, Sedang, Kuat, dan Sangat Kuat berdasarkan skor entropy mereka.")
+            st.write("Diagram ini menunjukkan distribusi kekuatan dari 13 juta password yang bocor dari dataset rockyou.txt. Temuan utamanya adalah:\n\n**1.Dominasi Kategori Sedang:** Sebanyak 62,2% password hanya memenuhi standar keamanan minimal.\n\n**2.Zona Bahaya:** Jika digabungkan, kategori Lemah (22,3%) dan Sangat Lemah (11,9%) mencakup lebih dari sepertiga total password.\n\n**3.Sangat Langka:** Password yang benar-benar Kuat hanya berjumlah 3,6%.\n\nHasil ini menunjukkan betapa pentingnya untuk secara aktif memeriksa dan meningkatkan kekuatan password Anda.")
         with img_col2:
             st.image("diagram histogram.png")
-            st.write("**Diagram Histogram: Distribusi Skor Entropy Password**\n\nMenampilkan sebaran skor entropy dari seluruh password dalam dataset, memperlihatkan tren umum dalam kekuatan password yang digunakan.")
+            st.write("Grafik ini menunjukkan di mana kekuatan 13 juta password terdistribusi. Puncak tertinggi berada di skor Entropi sekitar 40-45 bit. Ini berarti mayoritas password di dunia nyata hanya berada di level \"Sedang\" tidak terlalu lemah, tetapi juga sama sekali tidak kuat. Sangat sedikit password (batang di ujung kanan) yang benar-benar mencapai tingkat keamanan \"Kuat\".")
 
     except FileNotFoundError:
         st.info("💡 Gambar diagram akan ditampilkan jika file `diagram pie.png` dan `diagram histogram.png` tersedia di folder yang sama.")
